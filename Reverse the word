@@ -1,0 +1,23 @@
+class Solution(object):
+    def reverseWords(self, s):
+        stack = []
+        word = ""
+
+        for char in s:
+            if char != " ":
+                word  += char
+
+            else:
+                if word:
+                    stack.append(word)
+                    word = ""
+
+        if word:
+            stack.append(word)
+
+        result = []
+        while stack:
+            result.append(stack.pop())
+
+        return" ".join(result)
+
